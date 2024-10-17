@@ -2,6 +2,7 @@
  Analisis de perdida de clientes de Amazon
 
 En este proyecto vamos a analizar un dataset en Excel para sacar conclusiones sobre la perdida de clientes.
+
 En el archivo .txt esta detallado cada uno de los pasos que se han realizado, asi como las conclusiones que se van sacando del analisis.
 
 Resumen de los porceso realizados:
