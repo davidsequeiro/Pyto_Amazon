@@ -2,15 +2,15 @@
 
 PREANALISIS
 
-* Quito duplicados
 * Idioma en Ingles -> Normalizar a Ingles todas las columnas
+* Quito duplicados
 * Marcar duplicados en rojo con formato condicional
 
 OBSERVACIONES
 
 * Hay que modificar la columna gender porque esta en dos idiomas
 
-* Comprobar under 30 y senior como mayor de 30 o mayor de 65 despues de comprobarlo con una columna añadida y formula IF
+* Comprobar under 30 y senior como mayor de 30 o mayor de 65 con una columna añadida y formula IF
 
 * Datos de Payment method no estan normalizados
 
@@ -18,13 +18,13 @@ OBSERVACIONES
 
 * Customer segment -> Spanglish
 
-* Average monthly dar formato decimal con dos decimales
+* Average monthly dar formato decimal con dos decimales-> es moneda
 
 * Numbers of complains muy importante habla de las quejas
 
 * Applied discount -> Booleano aparece en castellano por la configuracion regional
 
-* Metodo de contacto puede ser importante para analizar cual es la manera de mejor contacto con el cliente -> indicaria que hay problemas en añlgun departamento
+* Metodo de contacto puede ser importante para analizar cual es la manera de mejor contacto con el cliente -> indicaria que hay problemas en algun departamento
 
 * Contact date tiene errores de formato de fecha
 
@@ -41,15 +41,15 @@ OBSERVACIONES
 
 TRANSFORMACION
 
-* Comparar valaores de ChurnLabel y Churn puesto que la informacion es la misma
+* Comparar valores de ChurnLabel y Churn puesto que la informacion es la misma
 	Creamos columna nueva:
 	=SI([@[Churn Label]]="No";[@Churned]=0;Y([@[Churn Label]]="Yes";[@Churned]=1;0;1))
 	
-* Vemos que la informacion es la misma por lo que eliminamos churn y la columna creada
+	* Vemos que la informacion es la misma por lo que eliminamos churn ya que, en este caso, nos interesa mas el formato texto que el formato booleano de 0 y 1 y la columna creada
 
 * Eliminamos la columna telefono porque para el analisis no es relevante
 
-* Under 30 y senior permanecen porque es posible mque sea una metrica de amazon aunque aporta informacion derivada de age
+* Under 30 y senior permanecen porque es posible que sea una metrica de amazon aunque aporta informacion derivada de age
 
 * Eliminamos la columna Hobby, Favorite TV Show, internal notes(esta ultima no es relevante porque solo hay un dato)
 
@@ -75,7 +75,7 @@ NORMALIZACION
 	=SI([@Gender]="Hombre";"Male";[@Gender])
 
 	opcion 2
-	Crear TABLA SUPLETORIA  con los datos unicos de la columna J (y se puede automatizar con la funcion unicos y despues crear columna nueva en tabla original y poner buscarv)  y asignar valor para cada valor en castellano, con esto conseguimos que si se añaden valores nuevos 
+	Crear TABLA SUPLETORIA  con los datos unicos de la columna original (y se puede automatizar con la funcion unicos y despues crear columna nueva en tabla original y poner buscarv)  y asignar valor para cada valor en castellano, con esto conseguimos que se actualice si se añaden valores nuevos 
 
 * Payment method -> nompropio para poner todo en formato 1ª Mayusc y resto Minusc
 
