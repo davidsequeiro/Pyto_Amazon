@@ -86,7 +86,43 @@ NORMALIZACION
  	elimina 317 nuevos duplicados.
  	* Quedan 3 valores duplicados por los valores de las columnas Monthly Charge(USD) y Total Charges.-> Verificar info con cliente.
 
+*_______________________________________________________________________________________________________________________________________________________________________________________________________________*
 
+SESION 2
+
+* El cliente indica que los clientes mayores de 65 son senior, nos autoriza a cambiar el dato.
+	Modificamos la columna senior segun el valor de la columna AGE
+
+ANALISIS DESCRIPTIVO
+
+*Account Length (in months)
+	Media 32 (promedio)
+	Mediana 29 (valor central)
+	Moda 1 (el valor mas repetido)
+	Duracion de cuentas es muy variada hay cuentas muy longevas y otras que solo duran un mes
+
+	Desviacion 24 (es una desviacion muy alta)
+	Curtosis -1.38 (negativa -> hay mas valores por debajo de la media
+
+*Customer Service Calls
+	Desviacion estandar (alta -> hay muchos que no llaman pero el que llama lo hace repetidamente
+	Curtosis ( Hay mas peso en los extremos)
+	Asimetria ( )
+
+*Avg Monthly GB Download
+	Moda 0 (la mayor parte no descarga gb)
+	Desviacion (muy alta por lo que tenemos valores extremos)
+	Curtosis ( es positiva -> las colas pesan mas -> la mayoria no descargan pero el que lo hace descarga mucho)
+
+*Extra Data Charges
+	Desviacion altisima (la moda es 0 y la median es cero -> valores mas comunes, -> hay pocos con cargo extra pero los que tiene cargo es alto)
+
+**Buscar la relacion entre las ods columnasa anteriores
+
+*Age
+	desviacion muy alta (hay valores extremos que se alejan mucho de la media)
+	curtosis (negativa porque los valores estan mas acumuldados alrededor de la media)
+	coeficiente ((positiva la mayor parte del grupo estan por encima de la media -> la mayoria son mayores)
 
 
 
