@@ -1,0 +1,130 @@
+* Formato de tabla
+
+PREANALISIS
+
+* Idioma en Ingles -> Normalizar a Ingles todas las columnas
+* Quito duplicados
+* Marcar duplicados en rojo con formato condicional
+
+OBSERVACIONES
+
+* Hay que modificar la columna gender porque esta en dos idiomas
+
+* Comprobar under 30 y senior como mayor de 30 o mayor de 65 con una columna añadida y formula IF
+
+* Datos de Payment method no estan normalizados
+
+* Cambiar tipo de dato monthly check mezcla numeros y numeros mas texto
+
+* Customer segment -> Spanglish
+
+* Average monthly dar formato decimal con dos decimales-> es moneda
+
+* Numbers of complains muy importante habla de las quejas
+
+* Applied discount -> Booleano aparece en castellano por la configuracion regional
+
+* Metodo de contacto puede ser importante para analizar cual es la manera de mejor contacto con el cliente -> indicaria que hay problemas en algun departamento
+
+* Contact date tiene errores de formato de fecha
+
+* Datos incompletos (buscar si se pueden calcular)
+
+* Churn category y churn reason importantes para abandono de clientes
+
+* Contact date tiene errores de formato de fecha
+
+* Customer ternure nos ha dicho amazon que no es necesaria
+
+* Average Monthly Expenses es en formato de dolares
+
+
+TRANSFORMACION
+
+* Comparar valores de ChurnLabel y Churn puesto que la informacion es la misma
+	Creamos columna nueva:
+	=SI([@[Churn Label]]="No";[@Churned]=0;Y([@[Churn Label]]="Yes";[@Churned]=1;0;1))
+	
+	* Vemos que la informacion es la misma por lo que eliminamos churn ya que, en este caso, nos interesa mas el formato texto que el formato booleano de 0 y 1 y la columna creada
+
+* Eliminamos la columna telefono porque para el analisis no es relevante
+
+* Under 30 y senior permanecen porque es posible que sea una metrica de amazon aunque aporta informacion derivada de age
+
+* Eliminamos la columna Hobby, Favorite TV Show, internal notes(esta ultima no es relevante porque solo hay un dato)
+
+* Transformar MONTHLY CHARGE a formato numero
+	=VALOR.NUMERO(SI.ERROR(IZQUIERDA([@[Monthly Charge]];HALLAR(" ";[@[Monthly Charge]]));[@[Monthly Charge]]))
+
+	opcion 2:
+	=SI.ERROR(extrae([@[Monthly Charge Sucio]];1;HALLAR(" ";[@[Monthly Charge Sucio]]))-1;[@[Monthly Charge Sucio]]) -> hace un -1 para extraer el espacio en blanco
+
+*  Contact date -> Formato de fecha
+	=FECHANUMERO([@[Contact Date]]) -> devuelve numero cambiamos a fecha corta
+
+* Average Monthly Expenses Lo reconoce como formato general lo cambiamos a numero con 2 decimales
+
+
+NORMALIZACION
+
+* Unlimited data plan
+	* Unlimited data plan cambiar 0 y 1 por no y yes
+	=SI([@[Unlimited Data Plan]]=0;"No";"Yes")
+
+* Gender cambiar Hombre a male
+	=SI([@Gender]="Hombre";"Male";[@Gender])
+
+	opcion 2
+	Crear TABLA SUPLETORIA  con los datos unicos de la columna original (y se puede automatizar con la funcion unicos y despues crear columna nueva en tabla original y poner buscarv)  y asignar valor para cada valor en castellano, con esto conseguimos que se actualice si se añaden valores nuevos 
+
+* Payment method -> nompropio para poner todo en formato 1ª Mayusc y resto Minusc
+
+* Customer segment , preferred method contact  pasar a ingles
+	applied discount -> Yes  y No
+
+* Volvemos a comprobar duplicados por si despues de los cambios hay columnas nuevas duplicadas despues de la transformacion deseleccionando las columnas sucias (excepto senior que aun no sabemos la informacion correcta)
+ 	elimina 317 nuevos duplicados.
+ 	* Quedan 3 valores duplicados por los valores de las columnas Monthly Charge(USD) y Total Charges.-> Verificar info con cliente.
+
+*_______________________________________________________________________________________________________________________________________________________________________________________________________________*
+
+SESION 2
+
+* El cliente indica que los clientes mayores de 65 son senior, nos autoriza a cambiar el dato.
+	Modificamos la columna senior segun el valor de la columna AGE
+
+ANALISIS DESCRIPTIVO
+
+*Account Length (in months)
+	Media 32 (promedio)
+	Mediana 29 (valor central)
+	Moda 1 (el valor mas repetido)
+	Duracion de cuentas es muy variada hay cuentas muy longevas y otras que solo duran un mes
+
+	Desviacion 24 (es una desviacion muy alta)
+	Curtosis -1.38 (negativa -> hay mas valores por debajo de la media
+
+*Customer Service Calls
+	Desviacion estandar (alta -> hay muchos que no llaman pero el que llama lo hace repetidamente
+	Curtosis ( Hay mas peso en los extremos)
+	Asimetria ( )
+
+*Avg Monthly GB Download
+	Moda 0 (la mayor parte no descarga gb)
+	Desviacion (muy alta por lo que tenemos valores extremos)
+	Curtosis ( es positiva -> las colas pesan mas -> la mayoria no descargan pero el que lo hace descarga mucho)
+
+*Extra Data Charges
+	Desviacion altisima (la moda es 0 y la median es cero -> valores mas comunes, -> hay pocos con cargo extra pero los que tiene cargo es alto)
+
+**Buscar la relacion entre las ods columnasa anteriores
+
+*Age
+	desviacion muy alta (hay valores extremos que se alejan mucho de la media)
+	curtosis (negativa porque los valores estan mas acumuldados alrededor de la media)
+	coeficiente ((positiva la mayor parte del grupo estan por encima de la media -> la mayoria son mayores)
+
+
+
+
+	
