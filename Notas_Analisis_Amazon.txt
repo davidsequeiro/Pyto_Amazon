@@ -112,7 +112,7 @@ ANALISIS DESCRIPTIVO
 *Avg Monthly GB Download
 	Moda 0 (la mayor parte no descarga gb)
 	Desviacion (muy alta por lo que tenemos valores extremos)
-	Curtosis ( es positiva -> las colas pesan mas -> la mayoria no descargan pero el que lo hace descarga mucho)
+	Curtosis ( es positiva -> las colas pesan mas -> la mayoria no descargan pero el que lo hace descarga mucho
 
 *Extra Data Charges
 	Desviacion altisima (la moda es 0 y la median es cero -> valores mas comunes, -> hay pocos con cargo extra pero los que tiene cargo es alto)
@@ -124,7 +124,111 @@ ANALISIS DESCRIPTIVO
 	curtosis (negativa porque los valores estan mas acumuldados alrededor de la media)
 	coeficiente ((positiva la mayor parte del grupo estan por encima de la media -> la mayoria son mayores)
 
+*Number of Customers in Group
+ los datos muestran que hay un elevado numero de clientes sin esta opcion la media es (0.83%) El valor mas repetido o moda es 0.
+Sin embargo hay una desviacion estandar muy elevada lo que podria indicar que el contrata esta opcion tiende a incluir a un alto numero de miembros. El numero maximo de miembros por grupo es 6.
+Tambien se observa que los clientes con esta opcion contratada son mas fieles  
+
+*Monthly Charges
+Se observa un mayor numero de cuentas con bajo importe de subcripcion mensual, habria que ver opciones de pago y rango de precios.
+El valor mas repetido o Moda es 10 mientras que la media 30.93.
+La mayor parte de las cuentas se concentra alrededor de este importe medio. El rango maximo es 87. 
+Sin embargo se observa un elevado porcentaje de desviacion de este valor lo que nos indica un amplio rango de precios 
+en los servicios contratados pudiendo llegar a variar en un 53% sobre el precio mensual medio.
+Observamos una simetria negativa de -0.87 lo que inclina el rango de cargos mensuales hacia valores por encima de la media
+
+*Total Charges
+Observamos que el valor mas repetido o Moda es 10 esto podria indicar que hay un alto numero de cuentas con un cargo total muy alejado de la media, podria ser debido a cuentas que usan una subscripcion mensual y luego se dan de baja,
+o tambien a cuentas que han superado el mes de prueba y han renovado automaticamente la subscripcion pero luego han cursado baja. Habria que profundizar mas en el analisis.
+el valor de la media es 1085 y la mediana 651 lo que indica que hay un porcentaje muy alto de clientes con cargos por encima de la media
+Podemos concluir que los datos son muy variables y estan muy repartidos a lo largo de la distribucion, donde podemos ver una alta concentracion en los valores proximos a la moda y una amplia distribucion en los valores por encima de la media.
+La desviacion estandar es muy elevada 1127.60 lo que indiaca que los datos estan muy dispersos alrededor de la media, esto podria indicar presencia de valores extremos.
+La curtosis es positiva lo que indica picos mas pronunciados y colas mas pesadas lo que confirma la probabilidad de presencia de valores extremos alejados de la media
+
+*Average Monthly Expenses
+Media muy proxima a la media por lo que la mayoria de los datos es bastante simetrica sobre el valor de la media,
+Sin embargo la moda es 47, luego tenemos un pico en torno a este valor, lo cual se confirma por la desviacion positiva de 16.82, muy alta, esto sugire un distribucion de los datos mas proxima a valores altos por encima de la media
+La curtosis es -0.62 lo que nos indica un pico mas aplanado que una distribucion normal y el coeficiente asimetria confrima que los datos estan desviados a importes sobre la media.
+
+*Number of Complaints or Support
+La meida y la mediana coinciden en un valor de 5 , el rango es 10  donde el maximo es 10 y el minimo es 0, la moda es 6,
+esto combinado con una desviacion de 3 nos indica que hay valores extremos, concluimos que el cliente o llama muy poco o pero si lo hace, llama mucho.
+La curtosis negativa de -1.22 nos indica que hay un una distrubucion mas repartida a lo largo del eje.
+el coeficiente de asimetria nos indica que hay una mayor concentracion de usuarios en los valores por debajo de la media.
 
 
+*_______________________________________________________________________________________________________________________________________________________________________________________________________________*
 
+SESION 3
+
+Tablas de contingencia para columnas categoricas
+
+Unlimited data VS Churn -> CustomerId % (cuenta/ porcentaje total de filas)
+Los clientes tienden a abandonar el servicio si han contratado los datos ilimitados
+Esto puede deberse a que no sea un servicio acorde a las necesidades de los usuarios y esto genere insatisfaccion en los mismos
+
+State
+no es una forma optima de analizar
+
+Gender
+Parece que el genero no es un factor determintante en la retencion o el abandono del servicio. los valores por genero son similiarfers al total.
+Sin embargo aumneta ligeramente en el caso de los usuarios que prefieren no indicar el genero
+
+Under 30
+Los usuarios de menos de 30 tienen una mayor fidelidad con el servicio esto puede deberse a un contenido mas enfocado al publico joven o una mayor facilidad de interaccion con la plataforma o las tecnologias
+
+Senior
+Confirma la conclusion anterior indica un valor muy elevado de abando de clientes senior. tambien se puede entender por la baja demanda de pedidos a domicilio de esta categoria.
+
+Group
+El porcentaje de personas con pack de grupo que abandona es significativamente menor que los no agrupados. (6.5%) lo cual indica una alto grado de satisfaccion de este sector de clientes, probablemente debido al menor coste por usuario.
+
+online backUP
+Es menos probable el abandono si el cliente tiene copia de seguridad. Esto puede deberse porque les ofrezcamos sguridad a la hora de no perder sus documnetos, fotos etc.
+Ademas ees posible que los clientes que contrataron este servicio lo hayan hecho por planificacion a futuro centralizando gestiones de cuentas en un unico servicio
+
+Crontact Type
+Seria interesante saber si la gente renueva o abandona cuando acaba el periodo
+Permanecia estrechamente ligada a la duracion del contrato. Se muestra gran abandono de clientes que contratan el servicio mes a mes
+posibles causas:
+Mes de pureba
+Compra estacional (navidades, black friday, estrenos contenido especifico)
+
+Seria conveniente potenciar la venta de los contratos de larga duracion.
+
+Payment Method
+Valores nulos bajo abandono pero tambien es muy bajo el numero de usuarios (16)
+El porcentaje de abandono se eleva mucho cuando pagan con tarjeta de debito, se puede deber a inseguridad financiera o de liquidez del cliente. 
+El porcentaje de anbandono en cheques es muy elevado pero el numero de usuarios que usan este metodo de pago es muy reducido 
+
+Churn category
+Calculamos el porcentaje sobre el total de columnas
+Vemos que el porcentaje de abondono sin razon es muy pequeño, pero hemos observado que el motivo de mayor abandono es por la competencia.12% del total de clientes y 44% de los motivos de abandono
+
+Churn reason
+Seria interesante analizar las razones de abandono pero sobre la competencia.
+
+
+Segment
+
+Contact Method
+Nada especialmente reseñable
+
+Applied Discount
+no es relevante el descuento.
+
+
+Analisis descriptivo fechas
+
+Contact Date
+El año de mas abandono es 2022
+El trimestre de mas abandono es el T2
+El mes de mas abandono es mayo
+
+Last Transaction date
+Mayor fidelidad segundo trimestre
+
+*_______________________________________________________________________________________________________________________________________________________________________________________________________________*
+
+SESION 4
 	
