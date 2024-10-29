@@ -231,4 +231,13 @@ Mayor fidelidad segundo trimestre
 *_______________________________________________________________________________________________________________________________________________________________________________________________________________*
 
 SESION 4
+
+account length
+Total general -> respecto al global
+por filas -> por agrupaciones
+por columnas -> respecto a No Yes
+
+Comparar todos los porcentajes para ver las diferencias entre los distintos analisis, revisando los porcentajes de datos totales que afectan a cada analisis.
+**Confirmar siempre los datos, intentar rebatirlo.
+
 	
