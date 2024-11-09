@@ -1,6 +1,6 @@
 # Pyto_Amazon
 
-![alt text](Img/amazon-prime-logo-0.png)
+![alt text](Img/amazon-prime-logo-1.png)
 
 ### **Analisis de perdida de clientes de Amazon**
 
@@ -36,3 +36,13 @@ Pyto_Amazon
 ### DASHBOARD
 
 ![alt text](<Datos Dashboard/Dashboard.png>)
+
+### REFERENCIAS
+
+Este proyecto ha sido creado en las calses en directo del curso de Data & Analytics.
+Se ha desarrollado en 8 sesiones de 2 horas con la guia de los tutores y las aportaciones de los alumnos.
+
+La tutoria de este proyecto corresponde a:
+
+- Jaime Rollon [Github](https://github.com/RCJaime)
+- Silvia Alsina [Github](https://github.com/salsi95)
