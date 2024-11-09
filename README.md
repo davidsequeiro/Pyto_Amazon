@@ -1,5 +1,7 @@
 # Pyto_Amazon
 
+![alt text](Img/amazon-prime-logo-0.png)
+
 ### **Analisis de perdida de clientes de Amazon**
 
 En este proyecto vamos a analizar un dataset en Excel para sacar conclusiones sobre la perdida de clientes.
@@ -30,3 +32,7 @@ Pyto_Amazon
 - Datos Dashboard
 - Img
 - Desarrollo.docx
+
+### DASHBOARD
+
+![alt text](<Datos Dashboard/Dashboard.png>)
