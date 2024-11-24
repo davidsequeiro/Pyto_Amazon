@@ -24,14 +24,22 @@ En el archivo Desarrollo esta detallado cada uno de los pasos que se han realiza
 
 ### Directorio
 
-Pyto_Amazon
-
-- Datos Brutos #datos originales
-- Datos Transformados
-- Datos Analisis
-- Datos Dashboard
-- Img
+```bash
+Pyto_Amazon/
+├───Data Analisis
+    - Amazon_churn_analisis_descriptivo.xlsx
+    - Amazon_churn_analisis_descriptivo_catg_grafic.xlsx
+    - Amazon_churn_analisis_descriptivo_num_grafic.xlsx
+├───Datos Brutos
+    - amazon_churn_datosbrutos.xlsx
+├───Datos Dashboard
+    - Dashboard.xlsx
+├───Datos transformados
+    - amazon_churn_datosTrasnform.xlsx
+└───Img (Imagenes relacionadas con el proyecto [Dashboard, Logo, Graficos])
 - Desarrollo.docx
+-README.md
+```
 
 ### DASHBOARD
 

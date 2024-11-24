@@ -1,0 +1,6 @@
+Listado de rutas de carpetas para el volumen BOOTCAMP
+El n£mero de serie del volumen es 0000003B 0246:9FF7
+C:\USERS\DAVID\ONEDRIVE\DATA\FORMACION\DATA_V3\PYTO_AMAZON\-A
+Ruta de acceso no v lida: \USERS\DAVID\ONEDRIVE\DATA\FORMACION\DATA_V3\PYTO_AMAZON\-A
+No existe ninguna subcarpeta 
+
